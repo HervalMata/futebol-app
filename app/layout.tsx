@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SearchBar from "@/app/components/searchBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,23 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className="relative bg-black">
+          <div className="absolute top-0 left-0 w-full h-full">
+              <img
+                  src="/background.png"
+                  alt="background"
+                  className="h-screen w-full object-cover"
+              />
+          </div>
+          <div className="absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-green/10 to-green" />
+          <div className='relative'>
+            <SearchBar />
+            {children}
+          </div>
+        </div>
+
+      </body>
     </html>
   );
 }
