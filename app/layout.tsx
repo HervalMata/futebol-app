@@ -37,7 +37,7 @@ export default function RootLayout({
                   className="h-screen w-full object-cover"
               />
           </div>
-          <div className="absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-green/10 to-green" />
+          <div className="absolute top-0 left-0 w-full h-screen bg-linear-to-b from-green/10 to-green" />
           <div className='relative'>
             <SearchBar />
             {children}
