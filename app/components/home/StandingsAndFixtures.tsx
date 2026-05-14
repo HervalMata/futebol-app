@@ -14,7 +14,7 @@ export default function StandingsAndFixtures(
         filteredFixtures: AllFixtures[]
     }
 ) {
-    const menuItems = ['Brasil Série A', "Brasil Série B", "Brasil Série C", 'Premier League', 'La Liga', 'Bundesliga', 'Serie A', 'Ligue 1']
+    const menuItems = ['Brasil Série A', "Brasil Série B", "Brasil Série C", 'Premier League', 'La Liga', 'Bundesliga', 'Serie A', 'Ligue1']
     const [activeTab, setActiveTab] = useState(0)
     const menuRef = useRef<HTMLDivElement>(null)
 
@@ -79,7 +79,7 @@ export default function StandingsAndFixtures(
                         </div>
                         <div ref={menuRef} className="w-full flex overflow-x-hidden snap-x scrollbar-none scroll-smooth text-xs md:text-sm">
                             {
-                                standingsData.map((responseData, i) => (
+                                standingsData.map((responseData) => (
                                     <div
                                         key={responseData.league.id}
                                         className="shrink-0 w-full snap-center flex justify-center items-center"
@@ -131,8 +131,8 @@ export default function StandingsAndFixtures(
                                                             {
                                                                 team.form?.split('').map((char, i) => (
                                                                     <div
-                                                                        key={i}
-                                                                        className={`opacity-80 w-3 h-3 m-[1px] rounded-full
+                                                                        key={char + i}
+                                                                        className={`opacity-80 w-3 h-3 m-px rounded-full
                                                                         ${
                                                                             char === 'L' ? 'bg-red-500' : char === 'D' ? 'bg-gray-500' : 'bg-green-500'
                                                                         }`}

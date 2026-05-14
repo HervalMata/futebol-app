@@ -5,6 +5,9 @@ import moment from "moment/moment";
 import getFixturesSample from "@/app/sampleData/getFixturesSample";
 
 const API_KEY = process.env.API_KEY as string
+if (!API_KEY) {
+    throw new Error("Missing API key")
+}
 
 const leagues = [
     { league: 268 , name: "Brasil Serie A" },
@@ -18,7 +21,7 @@ const leagues = [
 ]
 
 async function fetchFixturesByLeague(year: number, league: number): Promise<Fixture[]> {
-    const url = 'https://free-api-live-football-data.p.rapidapi.com'
+    const url = `https://free-api-live-football-data.p.rapidapi.com/football-get-fixtures?season=${year}&leagueid=${league}`
     const options = {
         method: "GET",
         headers: {

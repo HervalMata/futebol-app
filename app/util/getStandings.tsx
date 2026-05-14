@@ -44,9 +44,9 @@ export default async function getStandings(): Promise<Standing[]> {
     const standings: Standing[] = []
 
     const leagues = [
-        { name: "Serie A", id: 268 },
-        { name: "Serie B", id: 8814 },
-        { name: "Serie C", id: 8971 },
+        { name: "Brasil Serie A", id: 268 },
+        { name: "Brasil Serie B", id: 8814 },
+        { name: "Brasil Serie C", id: 8971 },
         { name: "EPL", id: 47 },
         { name: "La Liga", id: 87 },
         { name: "Bundesliga", id: 54 },

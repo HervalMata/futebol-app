@@ -9,14 +9,14 @@ export default async function getFixturesForFiveLeagues(): Promise<AllFixtures[]
 
         for (const league of allFixturesByLeague) {
             if (
-                league.name === 'Brasil Seria A' ||
-                league.name === 'Brasil Seria B' ||
-                league.name === 'Brasil Seria C' ||
+                league.name === 'Brasil Serie A' ||
+                league.name === 'Brasil Serie B' ||
+                league.name === 'Brasil Serie C' ||
                 league.name === 'EPL' ||
                 league.name === 'La Liga' ||
-                league.name === 'BundesLiga' ||
+                league.name === 'Bundesliga' ||
                 league.name === 'Serie A' ||
-                league.name === 'Ligue 1'
+                league.name === 'Ligue1'
             ) {
                 fixturesForFiveLeagues.push(league)
             }

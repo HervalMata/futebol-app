@@ -46,13 +46,13 @@ type Standing = {
 
 type FixtureInfo = {
     id: number,
-    referee: string,
+    referee: string | null,
     timezone: string,
     date: string,
     timestamp: number,
     periods: {
-        first: number,
-        second: number,
+        first: number | null,
+        second: number | null,
     },
     venue: {
         id: number,
@@ -62,7 +62,7 @@ type FixtureInfo = {
     status: {
         long: string,
         short: string,
-        elapsed: number,
+        elapsed: number | null,
     }
 }
 
@@ -81,19 +81,19 @@ type Teams = {
         id: number,
         name: string,
         logo: string,
-        winner: boolean,
+        winner: boolean | null,
     },
     away: {
         id: number,
         name: string,
         logo: string,
-        winner: boolean,
+        winner: boolean | null,
     }
 }
 
 type Goals = {
-    home: number,
-    away: number,
+    home: number | null,
+    away: number | null,
 }
 
 type Score = {
