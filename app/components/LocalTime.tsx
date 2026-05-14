@@ -23,7 +23,7 @@ export default function LocalTime(
         const fixtureTime = fixture.fixture.date
         const formatted = formattedToLocalTime(fixtureTime)
         setFormattedTime(formatted)
-    }, [])
+    }, [fixture])
 
     return (
         <div className="flex justify-center items-center text-center">{formattedTime}</div>
