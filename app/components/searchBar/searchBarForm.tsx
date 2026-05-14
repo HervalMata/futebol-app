@@ -38,7 +38,7 @@ export default function SearchBarForm(
       } else if (event.key === 'Enter') {
           if (focusedIndex !== -1) {
               const teamId = filteredTeams[focusedIndex].team.id
-              router.push(`/teams/${teamId}`)
+              router.push(`/team/${teamId}`)
               setSearchTerm('')
           }
       }
@@ -64,7 +64,7 @@ export default function SearchBarForm(
     }, []);
 
     return (
-        <div className="flex justify-center items-center w-full max-w-lg relative">
+        <div ref={teamListRef} className="flex justify-center items-center w-full max-w-lg relative">
             <input
                 type="text"
                 value={searchTerm}

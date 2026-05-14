@@ -1,13 +1,17 @@
 type PageProps = {
-    params: {
+    params: Promise<{
         id: string
-    }
+    }>
 }
 
-export default function Team(
+export default async function Team(
     {params}: PageProps
 ) {
+    const { id } = await params
+
     return (
-        <div></div>
+        <div className="flex justify-center items-center text-neutral-100">
+            {id}
+        </div>
     )
 }

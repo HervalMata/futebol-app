@@ -26,6 +26,9 @@ export default async function getStandings(): Promise<Standing[]> {
     }*/
 
     const API_KEY = process.env.API_KEY as string
+    if (!API_KEY) {
+        throw new Error("Missing API KEY");
+    }
 
     const options = {
         method: "GET",
@@ -56,8 +59,14 @@ export default async function getStandings(): Promise<Standing[]> {
 
         try {
             const response = await fetch(url, options)
+            if (!response.ok) {
+                throw new Error(`Could not find league with ID ${league.id}`)
+            }
             const data = await response.json()
             console.log(data.response)
+            if (!Array.isArray(data?.response)) {
+                throw new Error(`Could not find league with ID ${league.id}`)
+            }
             const standing = data.response[0]
 
             if (standing) {
