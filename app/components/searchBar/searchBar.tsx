@@ -1,4 +1,4 @@
-import SearchBarForm from "@/app/components/searchBarForm";
+import SearchBarForm from "@/app/components/searchBar/searchBarForm";
 import {Team} from "@/types";
 import getTeams from "@/app/util/getTeams";
 
